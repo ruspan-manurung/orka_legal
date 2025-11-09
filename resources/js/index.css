@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* custom utilities */
+.skew-panel {
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+}
+.skew-panel-right {
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+}
+.card-shadow {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
