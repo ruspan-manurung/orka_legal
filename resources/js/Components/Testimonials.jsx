@@ -22,11 +22,11 @@ export default function Testimonials() {
             {/* HEADER */}
             <div className="max-w-4xl mx-auto text-center mb-12 sm:mb-16">
                 <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-orkablack leading-tight mb-4">
-                    What Our Clients Say About Us
+                    Our Newest Blogs
                 </h2>
-                <p className="text-orkayellow text-sm sm:text-base font-semibold tracking-wide">
+                {/* <p className="text-orkayellow text-sm sm:text-base font-semibold tracking-wide">
                     Read our 5-Star Reviews
-                </p>
+                </p> */}
                 <div className="w-16 sm:w-20 h-1 bg-orkayellow mx-auto mt-6" />
             </div>
 
@@ -61,7 +61,7 @@ export default function Testimonials() {
                     className="bg-orkayellow text-orkablack px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-semibold shadow-md 
                      hover:shadow-lg hover:bg-yellow-400 active:bg-yellow-500 transition-all duration-200 text-sm sm:text-base"
                 >
-                    Get Yours Now
+                    Get to Know Us
                 </button>
             </div>
         </section>

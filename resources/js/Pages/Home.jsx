@@ -17,7 +17,7 @@ export default function Home() {
             <main>
                 <Hero />
                 <WhyOrka />
-                <Partners />
+                {/* <Partners /> */}
                 <Legacy />
                 <Services />
                 <Testimonials />

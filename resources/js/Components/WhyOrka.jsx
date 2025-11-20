@@ -16,7 +16,7 @@ export default function WhyOrka() {
                     </p>
 
                     <p className="text-zinc-600 text-base sm:text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
-                        We combine local expertise with international standards
+                        We combine local expertise with high standards
                         to deliver seamless legal solutions that protect your
                         interests and elevate your confidence in every
                         transaction, negotiation, or dispute.
@@ -32,10 +32,10 @@ export default function WhyOrka() {
                     />
                     <div className="p-4 sm:p-2 text-center md:text-center">
                         <h3 className="text-xl sm:text-2xl font-semibold mb-1">
-                            Kira Natasha
+                            Kiranatasha
                         </h3>
                         <p className="text-zinc-400 text-xs sm:text-sm tracking-wide uppercase">
-                            Senior Officer
+                            Lawyer
                         </p>
                     </div>
                 </div>
