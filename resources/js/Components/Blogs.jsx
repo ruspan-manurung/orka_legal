@@ -8,14 +8,14 @@ export default function Blogs() {
             image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80",
             link: "#",
         },
-        {
-            title: "How to Prepare for a Company Merger",
-            summary:
-                "A strategic 5-step process to ensure your merger or acquisition flows smoothly from start to finish.",
-            date: "Jan 28, 2025",
-            image: "https://images.unsplash.com/photo-1554469384-e58fac16e23d?auto=format&fit=crop&w=1200&q=80",
-            link: "#",
-        },
+        // {
+        //     title: "How to Prepare for a Company Merger",
+        //     summary:
+        //         "A strategic 5-step process to ensure your merger or acquisition flows smoothly from start to finish.",
+        //     date: "Jan 28, 2025",
+        //     image: "https://images.unsplash.com/photo-1554469384-e58fac16e23d?auto=format&fit=crop&w=1200&q=80",
+        //     link: "#",
+        // },
         {
             title: "Your Rights in Employment Termination",
             summary:
