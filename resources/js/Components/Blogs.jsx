@@ -38,45 +38,48 @@ export default function Blogs() {
                 </h2>
 
                 <p className="text-zinc-600 text-base sm:text-lg max-w-2xl mx-auto">
-                    Stay informed with legal tips, company law updates, and
-                    expert guidance from Orka Legal.
+                    Stay informed with legal updates, case insights, and expert
+                    opinions from the Orka Legal team.
                 </p>
 
                 <div className="w-16 sm:w-20 h-1 bg-orkayellow mx-auto mt-6" />
             </div>
 
             {/* BLOG CARDS */}
-            <div className="max-w-6xl mx-auto grid gap-10 sm:gap-12 md:grid-cols-2 lg:grid-cols-3">
+            <div className="max-w-7xl mx-auto grid gap-10 sm:gap-12 md:grid-cols-2 lg:grid-cols-3">
                 {blogs.map((b, i) => (
                     <div
                         key={i}
-                        className="bg-white rounded-2xl shadow-md border border-zinc-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+                        onClick={() => window.open(b.link, "_blank")}
+                        className="cursor-pointer bg-white rounded-2xl overflow-hidden shadow-md border border-zinc-100 
+                                   hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
                     >
                         {/* Image */}
-                        <img
-                            src={b.image}
-                            alt={b.title}
-                            className="w-full h-52 object-cover"
-                        />
+                        <div className="overflow-hidden">
+                            <img
+                                src={b.image}
+                                alt={b.title}
+                                className="w-full h-56 object-cover group-hover:scale-105 transition-all duration-500"
+                            />
+                        </div>
 
                         {/* Content */}
                         <div className="p-6">
                             <p className="text-sm text-zinc-500 mb-2">
                                 {b.date}
                             </p>
-                            <h3 className="text-xl font-semibold text-orkablack mb-3">
+
+                            <h3 className="text-xl font-semibold text-orkablack mb-3 group-hover:text-orkayellow transition-colors">
                                 {b.title}
                             </h3>
+
                             <p className="text-zinc-600 text-sm leading-relaxed mb-6">
                                 {b.summary}
                             </p>
 
-                            <button
-                                onClick={() => window.open(b.link, "_blank")}
-                                className="text-orkayellow font-semibold hover:underline"
-                            >
+                            <span className="text-orkayellow font-semibold group-hover:underline">
                                 Read More →
-                            </button>
+                            </span>
                         </div>
                     </div>
                 ))}

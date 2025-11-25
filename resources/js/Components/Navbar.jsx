@@ -1,12 +1,19 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react"; // npm install lucide-react
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleWhatsApp = () => {
+        const msg = `Hello Orka Legal,
+
+I would like to request a consultation regarding your legal services. 
+Please advise on the next steps and available consultation schedule.
+
+Thank you.`;
+
         window.open(
-            "https://wa.me/6281275001230?text=Hello%20Orka%20Legal,%20I%20would%20like%20to%20request%20a%20consultation.",
+            "https://wa.me/628118003088?text=" + encodeURIComponent(msg),
             "_blank"
         );
     };
@@ -23,7 +30,7 @@ export default function Navbar() {
                     />
                 </a>
 
-                {/* DESKTOP NAVIGATION */}
+                {/* DESKTOP NAV */}
                 <div className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-700">
                     <ul className="flex gap-8">
                         <li>
@@ -52,27 +59,19 @@ export default function Navbar() {
                         </li>
                         <li>
                             <a
-                                href="#partners"
+                                href="#blogs"
                                 className="hover:text-orkayellow transition"
                             >
-                                Partners
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#testimonials"
-                                className="hover:text-orkayellow transition"
-                            >
-                                Testimonials
+                                Blogs
                             </a>
                         </li>
                     </ul>
 
-                    {/* CTA BUTTON (DESKTOP) */}
+                    {/* DESKTOP CTA */}
                     <button
                         onClick={handleWhatsApp}
                         className="bg-orkayellow text-orkablack px-5 py-2 rounded-full font-semibold shadow-md 
-                       hover:shadow-lg hover:bg-yellow-400 transition-all duration-200"
+                                   hover:shadow-lg hover:bg-yellow-400 transition-all duration-200"
                     >
                         Contact Us
                     </button>
@@ -126,32 +125,23 @@ export default function Navbar() {
                         </li>
                         <li>
                             <a
-                                href="#partners"
+                                href="#blogs"
                                 className="hover:text-orkayellow transition"
                                 onClick={() => setIsOpen(false)}
                             >
-                                Partners
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#testimonials"
-                                className="hover:text-orkayellow transition"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                Testimonials
+                                Blogs
                             </a>
                         </li>
                     </ul>
 
-                    {/* MOBILE CTA BUTTON */}
+                    {/* MOBILE CTA */}
                     <button
                         onClick={() => {
                             setIsOpen(false);
                             handleWhatsApp();
                         }}
                         className="w-fit bg-orkayellow text-orkablack px-4 py-2 rounded-full font-medium shadow-sm 
-                       hover:bg-yellow-400 active:bg-yellow-500 transition-all duration-200 block"
+                                   hover:bg-yellow-400 active:bg-yellow-500 transition-all duration-200 block"
                     >
                         Contact Us
                     </button>
