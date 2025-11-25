@@ -3,7 +3,7 @@ import WhyOrka from "@/Components/WhyOrka";
 import Partners from "@/Components/Partners";
 import Legacy from "@/Components/Legacy";
 import Services from "@/Components/Services";
-import Testimonials from "@/Components/Testimonials";
+import Testimonials from "@/Components/Blogs";
 import Footer from "@/Components/Footer";
 import Navbar from "@/Components/Navbar";
 import ScrollToTop from "@/Components/ScrollToTop";
@@ -20,7 +20,7 @@ export default function Home() {
                 {/* <Partners /> */}
                 <Legacy />
                 <Services />
-                <Testimonials />
+                <Blogs />
                 <Footer />
             </main>
             <ScrollUpButton />

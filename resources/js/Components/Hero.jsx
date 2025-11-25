@@ -38,8 +38,8 @@ export default function Hero() {
                                 "_blank"
                             )
                         }
-                        className="bg-orkayellow text-orkablack px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold tracking-wide
-                       shadow-md hover:bg-[#c09d32] active:bg-[#b38f2e] transition-all duration-200 w-full sm:w-auto text-center"
+                        className="bg-orkayellow text-orkablack px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold tracking-wide shadow-md 
+                                   hover:bg-[#c09d32] active:bg-[#b38f2e] transition-all duration-200 w-full sm:w-auto text-center"
                     >
                         Free Consultation
                     </button>
@@ -48,29 +48,12 @@ export default function Hero() {
                     <button
                         onClick={scrollToServices}
                         className="border border-orkayellow text-orkayellow px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold
-                       hover:bg-orkayellow hover:text-orkablack active:bg-[#c09d32] transition-all duration-200 w-full sm:w-auto text-center"
+                                   hover:bg-orkayellow hover:text-orkablack active:bg-[#c09d32] transition-all duration-200 w-full sm:w-auto text-center"
                     >
                         Our Services
                     </button>
                 </div>
             </div>
-
-            {/* Optional Visual (Disabled for now, but responsive ready) */}
-            {/* 
-      <div className="mt-12 w-full rounded-xl overflow-hidden relative group md:max-w-md md:self-end">
-        <img
-          src="https://images.unsplash.com/photo-1530026405186-ed1f139313f9?auto=format&fit=crop&w=1200&q=80"
-          alt="Orka Legal team"
-          className="object-cover w-full h-64 sm:h-80 brightness-[0.6] group-hover:brightness-[0.8] transition-all duration-300"
-        />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-          <p className="text-xl sm:text-2xl font-medium tracking-wide text-orkayellow">
-            Professional Lawyers,
-          </p>
-          <p className="text-white text-lg sm:text-xl mt-1">Human Approach</p>
-        </div>
-      </div>
-      */}
         </section>
     );
 }
