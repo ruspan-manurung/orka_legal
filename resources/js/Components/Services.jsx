@@ -1,4 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
+import { useLang } from "@/lang/LanguageContext";
+
 import {
     BriefcaseIcon,
     ScaleIcon,
@@ -9,7 +11,8 @@ import {
     InfinityIcon,
 } from "lucide-react";
 
-const SERVICES = [
+// English version
+const SERVICES_EN = [
     {
         title: "Corporate & Business Law",
         icon: <BriefcaseIcon className="w-8 h-8 text-orkayellow" />,
@@ -91,7 +94,122 @@ const SERVICES = [
     },
 ];
 
+// Indonesian version
+const SERVICES_ID = [
+    {
+        title: "Hukum Korporasi & Bisnis",
+        icon: <BriefcaseIcon className="w-8 h-8 text-orkayellow" />,
+        details: [
+            "Negosiasi kontrak",
+            "Pembuatan Kontrak (PPJB, dll.)",
+            "Pendirian PT, Firma, CV, Koperasi, Yayasan",
+            "Merger & Akuisisi",
+            "Kepatuhan Perusahaan",
+            "Perubahan Akta",
+            "Jual Beli Saham",
+            "Legal Due Diligence",
+        ],
+    },
+    {
+        title: "Litigasi & Penyelesaian Sengketa",
+        icon: <ScaleIcon className="w-8 h-8 text-orkayellow" />,
+        details: ["Litigasi Umum", "Arbitrase", "Small Claim Court"],
+    },
+    {
+        title: "Perpajakan & Regulasi",
+        icon: <BanknoteIcon className="w-8 h-8 text-orkayellow" />,
+        details: [
+            "Pelaporan",
+            "NPWP",
+            "Review Dokumen",
+            "Konsultasi Kepatuhan",
+        ],
+    },
+    {
+        title: "Hukum Keluarga",
+        icon: <HeartHandshakeIcon className="w-8 h-8 text-orkayellow" />,
+        details: [
+            "Perceraian",
+            "Perjanjian Pra & Pasca Nikah",
+            "Adopsi",
+            "Akta Kelahiran (orang tua asing)",
+            "Waris",
+        ],
+    },
+    {
+        title: "Hukum Ketenagakerjaan",
+        icon: <UsersIcon className="w-8 h-8 text-orkayellow" />,
+        details: [
+            "PKWTT",
+            "PKWT",
+            "Kontrak Freelance",
+            "Perjanjian Outsourcing",
+            "Surat PHK",
+            "Surat Peringatan (SP)",
+            "Peraturan Perusahaan (PP)",
+            "Likuidasi Perusahaan",
+        ],
+    },
+    {
+        title: "Regulasi Kendaraan Listrik (EV)",
+        icon: <FileCheck2Icon className="w-8 h-8 text-orkayellow" />,
+        details: [
+            "Konsultasi Kepatuhan",
+            "Pembuatan Kontrak",
+            "Negosiasi Kontrak",
+            "NIB",
+            "Sertifikat Standar",
+            "PJP",
+            "PBG",
+            "Sertifikasi Halal",
+            "Perizinan Konstruksi",
+        ],
+    },
+    {
+        title: "Retainer Legal",
+        icon: <InfinityIcon className="w-8 h-8 text-orkayellow" />,
+        details: [
+            "Konsultasi Bulanan",
+            "Konsultasi Prioritas",
+            "Review Dokumen",
+            "Monitoring Korporat",
+        ],
+    },
+];
+
 export default function Services() {
+    const { lang } = useLang();
+    const SERVICES = lang === "en" ? SERVICES_EN : SERVICES_ID;
+
+    const text = {
+        en: {
+            title: "Our Legal Services",
+            desc: "Comprehensive legal solutions tailored to individuals and businesses — built on expertise, clarity, and integrity.",
+            modalBtn: "Consult Now",
+            wa: (service) => `Hello Orka Legal,
+
+I would like to request a consultation regarding:
+${service}
+
+Please advise on the next steps and the available consultation schedule.
+
+Thank you.`,
+        },
+        id: {
+            title: "Layanan Hukum Kami",
+            desc: "Solusi hukum lengkap untuk individu dan bisnis — dibangun dengan keahlian, kejelasan, dan integritas.",
+            modalBtn: "Konsultasi Sekarang",
+            wa: (service) => `Halo Orka Legal,
+
+Saya ingin meminta konsultasi mengenai:
+${service}
+
+Mohon informasikan langkah selanjutnya dan jadwal konsultasi yang tersedia.
+
+Terima kasih.`,
+        },
+    }[lang];
+
     const [open, setOpen] = useState(false);
     const [selected, setSelected] = useState(null);
 
@@ -105,13 +223,10 @@ export default function Services() {
         setSelected(null);
     }, []);
 
-    // disable scroll + close on ESC
     useEffect(() => {
         document.body.style.overflow = open ? "hidden" : "";
-
         const keyHandler = (e) => e.key === "Escape" && closeModal();
         window.addEventListener("keydown", keyHandler);
-
         return () => window.removeEventListener("keydown", keyHandler);
     }, [open, closeModal]);
 
@@ -120,18 +235,18 @@ export default function Services() {
             id="services"
             className="bg-white py-20 sm:py-24 md:py-28 px-6 sm:px-10 md:px-20 border-t border-zinc-100"
         >
+            {/* HEADER */}
             <div className="max-w-7xl mx-auto text-center opacity-0 animate-fadeUp">
                 <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif text-orkablack mb-6">
-                    Our Legal Services
+                    {text.title}
                 </h2>
                 <p className="text-zinc-600 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-                    Comprehensive legal solutions tailored to individuals and
-                    businesses — built on expertise, clarity, and integrity.
+                    {text.desc}
                 </p>
                 <div className="w-16 sm:w-24 h-1 bg-orkayellow mx-auto mt-6 mb-14" />
             </div>
 
-            {/* grid */}
+            {/* GRID */}
             <div className="max-w-7xl mx-auto grid gap-10 sm:gap-12 md:grid-cols-2 lg:grid-cols-3">
                 {SERVICES.map((srv, i) => (
                     <div
@@ -157,7 +272,7 @@ export default function Services() {
                 ))}
             </div>
 
-            {/* modal */}
+            {/* MODAL */}
             {open && selected && (
                 <div
                     className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 px-4
@@ -199,25 +314,17 @@ export default function Services() {
 
                         <button
                             onClick={() => {
-                                const message = `Hello Orka Legal,
-
-I would like to request a consultation regarding:
-${selected.title}
-
-Please advise on the next steps and the available consultation schedule.
-
-Thank you.`;
-
+                                const msg = text.wa(selected.title);
                                 window.open(
                                     "https://wa.me/628118003088?text=" +
-                                        encodeURIComponent(message),
+                                        encodeURIComponent(msg),
                                     "_blank"
                                 );
                             }}
                             className="w-full bg-orkayellow text-orkablack py-3 rounded-lg font-semibold 
                                        hover:bg-yellow-400 active:bg-yellow-500 transition-all"
                         >
-                            Consult Now
+                            {text.modalBtn}
                         </button>
                     </div>
                 </div>

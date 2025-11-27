@@ -1,6 +1,26 @@
 import { useEffect } from "react";
+import { useLang } from "@/lang/LanguageContext";
 
 export default function Hero() {
+    const { lang } = useLang();
+
+    // Text dictionary
+    const t = {
+        en: {
+            subtitle:
+                "Strength in Law. Trust in Integrity. Your partner in every legal step.",
+            waBtn: "Free Consultation",
+            servicesBtn: "Our Services",
+        },
+        id: {
+            subtitle:
+                "Kekuatan dalam Hukum. Kepercayaan dalam Integritas. Mitra Anda di Setiap Langkah Hukum.",
+            waBtn: "Konsultasi Gratis",
+            servicesBtn: "Layanan Kami",
+        },
+    }[lang];
+
+    // Scroll function
     const scrollToServices = () => {
         const el = document.getElementById("services");
         if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -11,29 +31,42 @@ export default function Hero() {
     }, []);
 
     return (
-        <section className="relative flex flex-col justify-center px-6 sm:px-10 md:px-20 py-24 md:py-32 overflow-hidden">
+        <section
+            id="home"
+            className="relative flex flex-col justify-center px-6 sm:px-10 md:px-20 py-24 md:py-32 overflow-hidden"
+        >
             {/* Background Gradient Motion */}
             <div className="absolute inset-0 bg-gradient-to-br from-orkablack via-[#151515] to-black opacity-[0.97] -z-10 animate-gradient-slow"></div>
 
             {/* Content */}
             <div className="text-white max-w-4xl animate-fade-in">
+                {/* SLOGAN (ALWAYS ENGLISH) */}
                 <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl leading-tight mb-6 animate-slide-up">
                     Strength In Law — Trust In Integrity —{" "}
                     <span className="text-orkayellow">Your</span> Partner in
                     Every Legal Step
                 </h1>
 
+                {/* Subtitle based on language */}
                 <p className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-xl mb-12 animate-slide-up delay-200">
-                    Kekuatan dalam Hukum. Kepercayaan dalam Integritas. Mitra
-                    Anda di Setiap Langkah Hukum.
+                    {t.subtitle}
                 </p>
 
+                {/* Buttons */}
                 <div className="flex flex-wrap gap-4 sm:gap-6 animate-slide-up delay-300">
-                    {/* WA Button */}
+                    {/* WhatsApp Button */}
                     <button
                         onClick={() =>
                             window.open(
-                                "https://wa.me/628118003088?text=Hello%20Orka%20Legal,%20I%20would%20like%20to%20request%20a%20consultation.",
+                                `https://wa.me/628118003088?text=${
+                                    lang === "en"
+                                        ? encodeURIComponent(
+                                              `Hello Orka Legal,\n\nI would like to request a consultation regarding your legal services.\nPlease advise on the next steps and available consultation schedule.\n\nThank you.`
+                                          )
+                                        : encodeURIComponent(
+                                              `Halo Orka Legal,\n\nSaya ingin meminta konsultasi terkait layanan hukum yang Anda sediakan.\nMohon informasikan langkah selanjutnya dan jadwal konsultasi yang tersedia.\n\nTerima kasih.`
+                                          )
+                                }`,
                                 "_blank"
                             )
                         }
@@ -42,7 +75,7 @@ export default function Hero() {
                                    active:bg-[#b38f2e] transition-all duration-200 
                                    w-full sm:w-auto text-center"
                     >
-                        Free Consultation
+                        {t.waBtn}
                     </button>
 
                     {/* Scroll Button */}
@@ -53,7 +86,7 @@ export default function Hero() {
                                    active:bg-[#c09d32] transition-all duration-200
                                    w-full sm:w-auto text-center"
                     >
-                        Our Services
+                        {t.servicesBtn}
                     </button>
                 </div>
             </div>

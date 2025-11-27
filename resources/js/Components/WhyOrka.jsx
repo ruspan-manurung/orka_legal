@@ -1,4 +1,27 @@
+import { useLang } from "@/lang/LanguageContext";
+
 export default function WhyOrka() {
+    const { lang } = useLang();
+
+    const text = {
+        en: {
+            title: "Why Choose Orka Legal?",
+            subtitle: "Because your case deserves commitment.",
+            desc: `We combine local expertise with high standards
+to deliver seamless legal solutions that protect your interests
+and elevate your confidence in every transaction, negotiation, or dispute.`,
+            role: "Lawyer",
+        },
+        id: {
+            title: "Mengapa Memilih Orka Legal?",
+            subtitle: "Karena kasus Anda layak mendapatkan komitmen.",
+            desc: `Kami menggabungkan keahlian lokal dengan standar tinggi
+untuk memberikan solusi hukum yang menyeluruh, melindungi kepentingan Anda,
+dan meningkatkan kepercayaan Anda dalam setiap transaksi, negosiasi, atau sengketa.`,
+            role: "Pengacara",
+        },
+    }[lang];
+
     return (
         <section
             id="whyorka"
@@ -8,34 +31,33 @@ export default function WhyOrka() {
                 {/* LEFT SIDE */}
                 <div className="text-center md:text-left">
                     <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold mb-5 text-orkablack leading-tight">
-                        Why Choose Orka Legal?
+                        {text.title}
                     </h2>
 
                     <p className="text-orkayellow text-lg sm:text-xl md:text-2xl font-semibold mb-5">
-                        Because your case deserves commitment.
+                        {text.subtitle}
                     </p>
 
-                    <p className="text-zinc-600 text-base sm:text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
-                        We combine local expertise with high standards
-                        to deliver seamless legal solutions that protect your
-                        interests and elevate your confidence in every
-                        transaction, negotiation, or dispute.
+                    <p className="text-zinc-600 text-base sm:text-lg leading-relaxed max-w-xl mx-auto md:mx-0 whitespace-pre-line">
+                        {text.desc}
                     </p>
                 </div>
 
-                {/* RIGHT SIDE (PROFILE CARD) */}
+                {/* RIGHT SIDE PROFILE CARD */}
                 <div className="bg-orkablack text-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 w-fit max-w-md mx-auto md:max-w-none">
                     <img
                         src="/Tasha.png"
                         alt="Senior Partner"
                         className="w-fit h-64 sm:h-80 md:h-[360px] object-cover"
                     />
-                    <div className="p-4 sm:p-2 text-center md:text-center">
+
+                    <div className="p-4 sm:p-2 text-center">
                         <h3 className="text-xl sm:text-2xl font-semibold mb-1">
                             Kiranatasha
                         </h3>
+
                         <p className="text-zinc-400 text-xs sm:text-sm tracking-wide uppercase">
-                            Lawyer
+                            {text.role}
                         </p>
                     </div>
                 </div>
