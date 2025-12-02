@@ -14,6 +14,13 @@ export default function Footer() {
                         </div>
                     </div>
 
+                    <p className="font-semibold text-white mb-3">Alamat</p>
+                    <p className="space-y-2 text-zinc-300">
+                        <span className="font-semibold">Bintaro Sektor 9</span>
+                        Jl. Maleo XVI No.6, Pd. Pucung, Kec. Pd. Aren, Kota
+                        Tangerang Selatan, Banten 15229
+                    </p>
+
                     <p className="mt-4 text-zinc-300">
                         <span className="font-semibold">Hubungi Kami:</span>
                         <br />
@@ -32,7 +39,6 @@ export default function Footer() {
                         </a>
                     </p>
                 </div>
-
                 {/* SERVICES */}
                 <div>
                     <p className="font-semibold text-white mb-3">Layanan</p>
@@ -43,7 +49,6 @@ export default function Footer() {
                         <li>Retainer Legal</li>
                     </ul>
                 </div>
-
                 {/* NAVIGATION */}
                 <div>
                     <p className="font-semibold text-white mb-3">Navigasi</p>

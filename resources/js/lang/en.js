@@ -65,6 +65,7 @@ Thank you.`,
     },
 
     footer: {
+        address: "Address:",
         contactUs: "Contact Us:",
         services: "Services",
         navigation: "Navigation",

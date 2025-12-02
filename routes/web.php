@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\HomeController;
 use App\Http\Controllers\Web\LeadController;
+use Inertia\Inertia;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -21,6 +22,14 @@ Route::post('/leads', [LeadController::class, 'store'])
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::view('/admin', 'admin.index')->name('admin.index');
     // later: Route::resource('services', Admin\ServiceController::class);
+});
+
+Route::get('/blogs', function () {
+    return Inertia::render('Blogs/Index');
+});
+
+Route::get('/blog/{slug}', function ($slug) {
+    return Inertia::render('Blogs/Show', ['slug' => $slug]);
 });
 
 require __DIR__.'/auth.php';

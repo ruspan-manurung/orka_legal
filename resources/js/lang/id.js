@@ -65,6 +65,7 @@ Terima kasih.`,
     },
 
     footer: {
+        address: "Alamat:",
         contactUs: "Hubungi Kami:",
         services: "Layanan",
         navigation: "Navigasi",

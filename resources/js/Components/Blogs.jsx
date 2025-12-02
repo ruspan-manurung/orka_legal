@@ -11,20 +11,22 @@ export default function Blogs() {
             viewAll: "View All Articles",
             blogs: [
                 {
+                    slug: "understanding-contract-law",
                     title: "Understanding Contract Law in Indonesia",
                     summary:
                         "A simple breakdown of contract essentials every business owner must know before signing any agreement.",
                     date: "Feb 10, 2025",
                     image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80",
-                    link: "#",
+                    link: "/blog/understanding-contract-law",
                 },
                 {
+                    slug: "your-rights-in-employment-termination",
                     title: "Your Rights in Employment Termination",
                     summary:
                         "PHK happens — here’s what Indonesian employees and employers both need to understand legally.",
                     date: "Jan 15, 2025",
                     image: "https://images.unsplash.com/photo-1521790361543-f645cf042ec4?auto=format&fit=crop&w=1200&q=80",
-                    link: "#",
+                    link: "/blog/your-rights-in-employment-termination",
                 },
             ],
         },
@@ -36,20 +38,22 @@ export default function Blogs() {
             viewAll: "Lihat Semua Artikel",
             blogs: [
                 {
+                    slug: "memahami-hukum-kontrak",
                     title: "Memahami Hukum Kontrak di Indonesia",
                     summary:
                         "Penjelasan sederhana tentang hal-hal penting dalam kontrak yang perlu dipahami pemilik bisnis sebelum menandatangani perjanjian apa pun.",
                     date: "10 Feb 2025",
                     image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80",
-                    link: "#",
+                    link: "/blog/understanding-contract-law", // same article, EN slug used
                 },
                 {
+                    slug: "hak-dalam-phk",
                     title: "Hak Anda dalam Pemutusan Hubungan Kerja (PHK)",
                     summary:
                         "PHK bisa terjadi. Berikut penjelasan hukum yang perlu dipahami oleh karyawan dan pemberi kerja di Indonesia.",
                     date: "15 Jan 2025",
                     image: "https://images.unsplash.com/photo-1521790361543-f645cf042ec4?auto=format&fit=crop&w=1200&q=80",
-                    link: "#",
+                    link: "/blog/your-rights-in-employment-termination",
                 },
             ],
         },
@@ -80,7 +84,7 @@ export default function Blogs() {
                 {t.blogs.map((b, i) => (
                     <div
                         key={i}
-                        onClick={() => window.open(b.link, "_blank")}
+                        onClick={() => window.open(b.link, "_self")}
                         className="cursor-pointer bg-white rounded-2xl overflow-hidden shadow-md border border-zinc-100 
                                    hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
                     >
@@ -116,7 +120,7 @@ export default function Blogs() {
             {/* CTA BUTTON */}
             <div className="mt-16 flex justify-center">
                 <button
-                    onClick={() => window.open("#", "_blank")}
+                    onClick={() => window.open("/blogs", "_self")}
                     className="bg-orkayellow text-orkablack px-8 py-3 rounded-full font-semibold shadow-md 
                     hover:shadow-lg hover:bg-yellow-400 active:bg-yellow-500 transition-all duration-200"
                 >
