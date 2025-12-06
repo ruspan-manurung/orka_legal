@@ -16,7 +16,7 @@ export default function Footer() {
 
                     <p className="font-semibold text-white mb-3">Alamat</p>
                     <p className="space-y-2 text-zinc-300">
-                        <span className="font-semibold">Bintaro Sektor 9</span>
+                        <span className="font-semibold">Bintaro Sektor 9</span> <br/>
                         Jl. Maleo XVI No.6, Pd. Pucung, Kec. Pd. Aren, Kota
                         Tangerang Selatan, Banten 15229
                     </p>
@@ -65,7 +65,7 @@ export default function Footer() {
                                 Tentang Kami
                             </button>
                         </li>
-                        <li>
+                        {/* <li>
                             <button
                                 onClick={() =>
                                     document
@@ -76,7 +76,7 @@ export default function Footer() {
                             >
                                 Blog
                             </button>
-                        </li>
+                        </li> */}
                         <li>
                             <button
                                 onClick={() =>

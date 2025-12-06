@@ -85,9 +85,9 @@ Terima kasih.`,
                         {t.services}
                     </button>
 
-                    <button onClick={() => handleScroll("blogs")} className="hover:text-orkayellow">
+                    {/* <button onClick={() => handleScroll("blogs")} className="hover:text-orkayellow">
                         {t.blogs}
-                    </button>
+                    </button> */}
 
                     {/* Language Toggle (desktop) */}
                     <button
